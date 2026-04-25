@@ -138,31 +138,7 @@ components:
           items:
             type: string
       description: List of roles.
-    SseNotification:
-      type: object
-      properties:
-        event:
-          type: string
-          description: The event name or type.
-          example: "notification"
-        data:
-          type: string
-          description: The payload data of the event (i.e., the notification message).
-          example: "New event happened at 2025-11-25T12:00:00Z"
-      description: A single notification event in the SSE stream.
   responses:
-    SseNotificationStreamResponse:
-      description: "Stream of SSE notifications."
-      content:
-        text/event-stream:
-          schema:
-            $ref: '#/components/schemas/SseNotification'
-          examples:
-            example1:
-              value: |
-                event: notification
-                data: New event happened at 2025-11-25T12:00:00Z
-                \n\n
     UserDetailsResponse:
       description: Successfully retrieved user details.
       content:
